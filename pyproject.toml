@@ -15,6 +15,9 @@ watchdog = {version = "0.10.3", extras = ["watchmedo"]}
 ipython = "^8.18.1"
 
 
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.0.9"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
