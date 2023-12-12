@@ -26,7 +26,8 @@ class MyClass(object):
 
 if __name__ == "__main__":
     m = MyClass()
-    m.x
+    print(m.x)
     m.x = 20
-    m.x
+    print(m.x)
+    print(m.y)
     del m.x
