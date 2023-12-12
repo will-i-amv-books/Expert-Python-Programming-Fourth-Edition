@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     print("FOO:", ci["FOO"])
     print("foo:", ci["foo"])
-    print("biz:", ci["FOO"])
-    print("BAZ:", ci["foo"])
+    print("biz:", ci["biz"])
+    print("BIZ:", ci["BIZ"])
     del ci["foo"]
     del ci["BIZ"]
