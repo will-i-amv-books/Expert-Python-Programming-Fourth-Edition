@@ -1,4 +1,4 @@
-class Aggregator:
+class AggregatorShared:
     all_aggregated = []
     last_aggregated = None
 
