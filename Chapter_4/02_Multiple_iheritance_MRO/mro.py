@@ -1,3 +1,6 @@
+from pprint import pprint
+
+
 class CommonBase:
     pass
 
@@ -16,4 +19,4 @@ class MyClass(Base1, Base2):
 
 
 if __name__ == "__main__":
-    print("MyClass's MRO:", MyClass.__mro__)
+    pprint(f"MyClass's MRO: \n{MyClass.__mro__}")
