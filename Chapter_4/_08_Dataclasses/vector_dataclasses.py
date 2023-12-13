@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -25,3 +25,9 @@ class Vector:
 class FrozenVector:
     x: int
     y: int
+
+
+@dataclass
+class DataClassWithDefaults:
+    immutable: str = field(default="this is static default value")
+    mutable: list = field(default_factory=list)
