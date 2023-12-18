@@ -1,5 +1,6 @@
 from collections import Counter
 from typing import Dict
+
 from redis import Redis
 
 from interfaces import ViewsStorageBackend
