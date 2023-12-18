@@ -8,11 +8,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-flask = "2.0.0"
+flask = "2.2.0"
 werkzeug = "2.2.2"
 wait-for-it = "2.1.1"
 watchdog = {version = "0.10.3", extras = ["watchmedo"]}
 ipython = "^8.18.1"
+zope-interface = "^6.1"
+mypy = "^1.7.1"
+redis = "^5.0.1"
+injector = "^0.21.0"
+flask-injector = "^0.15.0"
 
 
 [tool.poetry.group.dev.dependencies]
