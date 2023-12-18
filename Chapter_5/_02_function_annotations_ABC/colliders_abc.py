@@ -98,37 +98,31 @@ class PointWithABC(ColliderABC):
 
 
 if __name__ == "__main__":
-    print("Valid attempt:")
-    for collision in find_collisions(
-        [
-            Square(0, 0, 10),
-            Rect(5, 5, 20, 20),
-            Square(15, 20, 5),
-            Circle(1, 1, 2),
-        ]
-    ):
+    print("Valid attempt:\n")
+    for collision in find_collisions([
+        Square(0, 0, 10),
+        Rect(5, 5, 20, 20),
+        Square(15, 20, 5),
+        Circle(1, 1, 2),
+    ]):
         print(collision)
 
-    print("Invalid attempt")
-    for collision in find_collisions(
-        [
-            Square(0, 0, 10),
-            Rect(5, 5, 20, 20),
-            Square(15, 20, 5),
+    print("\nInvalid attempt (with a dataclass that doesn't inherit from the ABC):\n")
+    try:
+        for collision in find_collisions([
             Circle(1, 1, 2),
             Point(100, 200),
-        ]
-    ):
-        print(collision)
+        ]):
+            print(collision)
+    except Exception as e:
+        print(repr(e))
 
-    print("Invalid attempt using PointWithABC")
-    for collision in find_collisions(
-        [
-            Square(0, 0, 10),
-            Rect(5, 5, 20, 20),
-            Square(15, 20, 5),
+    print("\nInvalid attempt (with a dataclass that doesn't implement the ABC's abstract methods):\n")
+    try:
+        for collision in find_collisions([
             Circle(1, 1, 2),
             PointWithABC(100, 200),
-        ]
-    ):
-        print(collision)
+        ]):
+            print(collision)
+    except Exception as e:
+        print(repr(e))

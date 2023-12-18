@@ -36,19 +36,19 @@ class Dummy(DummyInterface):
         return None
 
 
-def intantiate(cls):
-    print("instantiating", cls)
+def instantiate(cls):
+    print(f"\nInstantiating ABC: {cls}")
     try:
         cls()
     except Exception as err:
-        print(" -", type(err), err)
+        print(f"ERROR: {repr(err)}")
     else:
-        print(" - ok")
+        print("SUCCESS")
 
 
 if __name__ == "__main__":
-    intantiate(DummyInterface)
-    intantiate(InvalidDummy)
-    intantiate(MissingMethodDummy)
-    intantiate(MissingPropertyDummy)
-    intantiate(Dummy)
+    instantiate(DummyInterface)
+    instantiate(InvalidDummy)
+    instantiate(MissingMethodDummy)
+    instantiate(MissingPropertyDummy)
+    instantiate(Dummy)
