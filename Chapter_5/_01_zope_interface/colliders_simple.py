@@ -1,4 +1,4 @@
-import itertools as it
+import itertools
 from dataclasses import dataclass
 
 
@@ -21,7 +21,7 @@ def rects_collide(rect1, rect2):
 def find_collisions(objects):
     return [
         (item1, item2)
-        for item1, item2 in it.combinations(objects, 2)
+        for item1, item2 in itertools.combinations(objects, 2)
         if rects_collide(item1.bounding_box, item2.bounding_box)
     ]
 
