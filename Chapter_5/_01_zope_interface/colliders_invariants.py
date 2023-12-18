@@ -108,25 +108,17 @@ class Point:
 
 
 if __name__ == "__main__":
-    print("Valid attempt:")
-    for collision in find_collisions(
-        [
-            Square(0, 0, 10),
-            Rect(5, 5, 20, 20),
-            Square(15, 20, 5),
-            Circle(1, 1, 2),
-        ]
-    ):
+    print("Valid attempt:\n")
+    for collision in find_collisions([
+        Square(0, 0, 10),
+        Rect(5, 5, 20, 20),
+        Square(15, 20, 5),
+        Circle(1, 1, 2),
+    ]):
         print(collision)
-
-    print("Invalid attempt")
-    for collision in find_collisions(
-        [
-            Square(0, 0, 10),
-            Rect(5, 5, 20, 20),
-            Square(15, 20, 5),
-            Circle(1, 1, 2),
-            Point(100, 200),
-        ]
-    ):
+    print("\nInvalid attempt (a detailed exception will be raised):\n")
+    for collision in find_collisions([
+        Circle(1, 1, 2),
+        Point(100, 200),
+    ]):
         print(collision)
