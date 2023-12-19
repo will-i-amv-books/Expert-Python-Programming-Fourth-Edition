@@ -20,4 +20,4 @@ if __name__ == "__main__":
     for thread in threads:
         thread.join()
 
-    print(f"{thread_count=}, {thread_visits=}")
+    print(f"thread_count={thread_count}, thread_visits={thread_visits}")
