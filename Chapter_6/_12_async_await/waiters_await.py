@@ -16,7 +16,10 @@ async def waiter(name):
 
 
 async def main():
-    await asyncio.gather(waiter("first"), waiter("second"))
+    await asyncio.gather(
+        waiter("first"), 
+        waiter("second")
+    )
 
 
 if __name__ == "__main__":
