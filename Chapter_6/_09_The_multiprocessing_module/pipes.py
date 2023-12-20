@@ -5,13 +5,14 @@ as communication channel.
 
 """
 from multiprocessing import Process, Pipe
+from multiprocessing.connection import Connection
 
 
 class CustomClass:
     pass
 
 
-def worker(connection):
+def worker(connection: Connection) -> None:
     while True:
         instance = connection.recv()
         if instance:
@@ -22,9 +23,7 @@ def worker(connection):
 
 def main():
     parent_conn, child_conn = Pipe()
-
     child = Process(target=worker, args=(child_conn,))
-
     for item in (
         42,
         "some string",
@@ -34,7 +33,6 @@ def main():
     ):
         print("PRNT: send: {}".format(item))
         parent_conn.send(item)
-
     child.start()
     child.join()
 

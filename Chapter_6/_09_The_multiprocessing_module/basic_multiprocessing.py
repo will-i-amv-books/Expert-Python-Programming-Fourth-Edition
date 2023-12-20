@@ -12,10 +12,12 @@ def work(identifier):
 
 
 def main():
-    processes = [Process(target=work, args=(number,)) for number in range(5)]
+    processes = [
+        Process(target=work, args=(number,))
+        for number in range(5)
+    ]
     for process in processes:
         process.start()
-
     while processes:
         processes.pop().join()
 

@@ -56,8 +56,10 @@ def fetch_rates(base: str) -> Tuple[str, Rates]:
 
 
 def present_result(base: str, rates: Rates) -> None:
-    rates_line = ", ".join(
-        [f"{rates[symbol]:7.03} {symbol}" for symbol in SYMBOLS])
+    rates_line = ", ".join([
+        f"{rates[symbol]:7.03} {symbol}" 
+        for symbol in SYMBOLS
+    ])
     print(f"1 {base} = {rates_line}")
 
 
